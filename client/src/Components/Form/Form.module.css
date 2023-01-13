@@ -99,11 +99,15 @@ body {
 }
 
 .container_temperament {
+    position: absolute;
+    right: 5%;
+    top: 10%;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 0 7px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 0 10px;
     align-items: center;
     justify-items: center;
+    font-size: 18px;
 }
 
 .element_temperament {
