@@ -7,6 +7,8 @@
     background-position: center;
     background-repeat: no-repeat;
     align-items: center;
+    animation-name: Sliden;
+    animation-duration: 1.5s;
 }
 
 .container {
@@ -17,6 +19,8 @@
     position: absolute;
     padding: 10px;
     right: 8px;
+    animation-name: form;
+    animation-duration: 1.5s;
 }
 
 .container h1 {
@@ -60,4 +64,43 @@
 #button:active {
   box-shadow: 0 2px #666;
   transform: translateY(4px);
+}
+
+.container_icon {
+    display: flex;
+    position: absolute;
+    left: 2%;
+    bottom: 2%;
+}
+
+.icon {
+    padding: 0px 5px;
+    font-size: 25px;
+    color: black;
+}
+
+.icon:hover {
+    color: #25b687;
+}
+
+@keyframes Sliden {
+    from {
+        margin-right: 100%;
+        width: 0%;
+    }
+
+    to {
+        margin-right: 0%;
+        width: 100%;
+    }
+}
+
+@keyframes form {
+    from {
+        transform: scale(0.2) rotate(90deg);
+    }
+
+    to {
+        transform: scale(0.93) rotate(0deg);
+    }
 }
