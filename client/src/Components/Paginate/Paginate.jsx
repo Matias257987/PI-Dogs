@@ -14,20 +14,20 @@ export default function Paginate({ dogsByPage, allDogs, paginated, currentPage, 
     };
 
     const onPrevClick = ()=>{
-        if((currentPage-1) % limitPage === 0){
-            setMaxPage(maxPage - limitPage);
-            setMinPage(minPage - limitPage);
+        if((currentPage -2) <= minPage){
+            setMaxPage(maxPage -1);
+            setMinPage(minPage -1);
         }
-        setCurrentPage(prev=> prev-1);
+        setCurrentPage(prev => prev - 1);
     };
 
     
-    const onNextClick = ()=>{
-        if(currentPage + 1 > maxPage){
-            setMaxPage(maxPage + limitPage);
-            setMinPage(minPage + limitPage);
+    const onNextClick = () => {
+        if(currentPage + 2 >= limitPage){
+            setMaxPage(maxPage +1);
+            setMinPage(minPage +1);
         }
-        setCurrentPage(prev=>prev+1);
+        setCurrentPage(next => next + 1);
     };
 
     const handlePageClick = (e)=>{
@@ -35,8 +35,9 @@ export default function Paginate({ dogsByPage, allDogs, paginated, currentPage, 
     }
 
     const pageNumbers = numberPage.map(e => {
-
-        if (e <= maxPage  && e > minPage) {
+        console.log(maxPage);
+        console.log(minPage);
+        if (e <= maxPage && e > minPage) {
             return(
                 <li key={e} id={e} onClick={handlePageClick} className={currentPage === e ? style.current_active : style.current}>{e}</li>
             );
@@ -47,24 +48,33 @@ export default function Paginate({ dogsByPage, allDogs, paginated, currentPage, 
 
     let pageIncrementEllipses = null;
     if(numberPage.length > maxPage){
-        pageIncrementEllipses = <li className={`${style.ellipse}`} onClick={onNextClick}>&hellip;</li>
+        pageIncrementEllipses = <li className={`${style.ellipse}`} >&hellip;</li>
     }
     let pageDecremenEllipses = null;
-    if(minPage >= 1){
-        pageDecremenEllipses = <li className={`${style.ellipse}`} onClick={onPrevClick}>&hellip;</li> 
+    if(minPage > 1){
+        pageDecremenEllipses = <li className={`${style.ellipse}`} >&hellip;</li> 
     }
+
+    let pageMin = false;
+
+    if (currentPage !== numberPage[0]) pageMin = true;
+
+    let pageMax = false;
+
+    if (currentPage !== numberPage.length) pageMax = true;
 
     return (
         <nav>
             <ul className={`${style.ul_container}`}>
                <li className={`${style.list}`}>
-                   <button className={currentPage === numberPage[0] ? style.disabled : style.prevAndNext} onClick={onPrevClick}>Prev</button>
+                    
+                   <button className={currentPage === numberPage[0] ? style.disabled : style.prevAndNext} onClick={pageMin ? onPrevClick : null}>Prev</button>
                </li>
                 {pageDecremenEllipses}
                 {pageNumbers}
                 {pageIncrementEllipses}
                 <li className={`${style.list}`}>
-                   <button className={currentPage === numberPage[numberPage.length-1] ? style.disabled : style.prevAndNext} onClick={onNextClick}>Next</button>
+                   <button className={currentPage === numberPage[numberPage.length-1] ? style.disabled : style.prevAndNext} onClick={pageMax ? onNextClick : null}>Next</button>
                </li>
             </ul>    
         </nav>
