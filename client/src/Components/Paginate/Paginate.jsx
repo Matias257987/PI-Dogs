@@ -14,7 +14,7 @@ export default function Paginate({ dogsByPage, allDogs, paginated, currentPage, 
     };
 
     const onPrevClick = ()=>{
-        if((currentPage -2) <= minPage){
+        if((currentPage -2) <= minPage && currentPage > 2){
             setMaxPage(maxPage -1);
             setMinPage(minPage -1);
         }
