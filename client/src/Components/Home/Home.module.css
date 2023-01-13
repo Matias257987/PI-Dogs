@@ -1,0 +1,160 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #3eca9edf;
+    padding-bottom: 8px;
+    border-bottom: 5px solid #398a75b0;
+}
+
+.header_container {
+    margin: 0 6%;
+    padding-bottom: 3px;
+    display: block;
+}
+
+#logo {
+    float: left;
+    height: 110%;
+    width: 80px;
+    background-image: url("./dog.png");
+    background-size: cover;
+    background-color: #25b687;
+    border-radius: 8px;
+    box-shadow: 3px 3px 5px 0.5px rgba(0,0,0,0.6);
+}
+
+#logo:hover {
+    transform: scale(1.025);
+}
+
+.searchbar_container {
+    margin-top: 5px;
+    padding: 2px 170px;
+}
+
+.filtered {
+    width: 195%;
+    margin-top: 8px;
+}
+
+.filtered select {
+    padding: 3px 5px;
+    border: none;
+    box-shadow: 3px 3px 5px 0.5px rgba(0, 0, 0, 0.6);
+    background-color: #25b687;
+    color: black;
+    cursor: pointer;
+}
+
+.filtered select:hover {
+    color: white;
+    transform: scale(1.025);
+}
+
+.filtered select:first-child {
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+}
+
+.filtered select:last-child {
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+.dogs {
+    margin: 4px 6%;
+}
+
+#button_add {
+    width: 100%;
+    max-width: 370px;
+    font-size: 15px;
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #25b687;
+    background: #25b687;
+    box-shadow: 3px 3px 5px 0.5px rgba(0,0,0,0.6);
+    border-radius: 10px;
+}
+
+#button_add:hover {
+    color: white;
+    transform: scale(1.1);
+}
+
+.main_container {
+    padding: 10px 5%;
+    background-color: seashell;
+}
+
+.container_dogs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2% 1%;
+    justify-items: center;
+}
+
+#container_dog {
+    background-color: rgb(125 210 145);
+    width: 85%;
+    border-radius: 15px;
+    padding: 5px;
+    overflow: hidden;
+    position: relative;
+    border: 5px solid rgb(110 175 120);
+    box-shadow: 5px 5px 5px 0.5px rgb(0, 0, 0, 0.6);
+}
+
+#container_dog:hover {
+    transform: scale(1.025);
+}
+
+.container_paginate {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 25px 0;
+}
+
+@media screen and (max-width: 600px) {
+    .header_container {
+        margin: 0;
+    }
+
+    #logo {
+        margin: 3px 0 2px 5px;
+    }
+
+    .searchbar_container {
+        padding: 2px 100px;
+    }    
+
+    .filtered {
+        width: 135%;
+    }
+
+    .dogs {
+        margin: 2px 2%;
+    }
+
+    #button_add {
+        width: 95%;
+        padding: 8px;
+    }
+
+    .main_container {
+        padding: 10px 2%;
+    }
+
+    .container_dogs {
+        display: flex;
+        flex-wrap: wrap;
+        justify-items: center;
+        justify-content: space-evenly;
+    }
+
+    #container_dog {
+        width: 30%;
+        margin: 8px;
+    }
+}

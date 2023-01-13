@@ -1,0 +1,104 @@
+.main_container {
+    display: flex;
+    justify-content: center;
+    margin-top: 38px;
+}
+
+.button {
+    position: absolute;
+    top: 10%;
+    right: 6%;
+    width: 100px;
+    height: 40px;
+    font-size: 18px;
+    background: none;
+    padding: 5px 6px;
+    border: 1px solid white;
+    outline: 2px solid rgb(60, 180, 60);
+    text-shadow: 2px 2px 3px rgb(60, 180, 60);
+    color: rgb(60, 180, 60);
+    border-radius: 5px;
+}
+
+.button:hover {
+    color: rgb(224, 24, 24);
+    background-color: rgb(230, 255, 255);
+    outline: 2px solid rgb(224, 24, 24);
+}
+
+.container {
+    width: 90%;
+    border: 8px solid rgb(60, 180, 60);
+    border-radius: 15px;
+    box-shadow: 14px 15px 3px -4px rgba(0, 0, 0, 0.75);
+}
+
+.sub_container {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    color: rgb(45, 135, 55);
+    padding: 10px;
+}
+
+#image {
+    height: 350px;
+    width: 450px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.info_container {
+    padding-left: 10%;
+}
+
+.info_container h1 {
+    margin: 5px;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.info_container h3 {
+    margin: 10px;
+    text-align: center;
+}
+
+#list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 10px;
+    margin-left: 60px;
+    align-items: center;
+    justify-items: stretch;
+}
+
+#list li {
+    list-style: square;
+    padding: 4px 25px 4px 0;
+}
+
+@media screen and (max-width: 600px) {
+    .main_container {
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    .button {
+        top: 5%;
+        right: 13%;
+        width: 120px;
+        height: 45px;
+    }
+
+    .sub_container {
+        flex-direction: column;
+        text-align: center;
+        padding: 0;
+    }
+
+    #image {
+        margin-top: 12vh;
+    }
+}
