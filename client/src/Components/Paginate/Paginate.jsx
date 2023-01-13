@@ -1,6 +1,8 @@
 import React from "react";
 import style from "./Paginate.module.css";
 import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 export default function Paginate({ dogsByPage, allDogs, paginated, currentPage, setCurrentPage }) {
     const numberPage = [];
@@ -35,8 +37,6 @@ export default function Paginate({ dogsByPage, allDogs, paginated, currentPage, 
     }
 
     const pageNumbers = numberPage.map(e => {
-        console.log(maxPage);
-        console.log(minPage);
         if (e <= maxPage && e > minPage) {
             return(
                 <li key={e} id={e} onClick={handlePageClick} className={currentPage === e ? style.current_active : style.current}>{e}</li>
@@ -76,7 +76,11 @@ export default function Paginate({ dogsByPage, allDogs, paginated, currentPage, 
                 <li className={`${style.list}`}>
                    <button className={currentPage === numberPage[numberPage.length-1] ? style.disabled : style.prevAndNext} onClick={pageMax ? onNextClick : null}>Next</button>
                </li>
-            </ul>    
+            </ul> 
+            <div className={`${style.container_icon}`}>
+                <a href="https://github.com/Matias257987" target='_blank' rel="noreferrer"><FontAwesomeIcon icon={ faGithub } className={`${style.icon}`}/></a>
+                <a href="https://www.linkedin.com/in/matias-acosta-32c" target='_blank' rel="noreferrer"><FontAwesomeIcon icon={ faLinkedin } className={`${style.icon}`}/></a>
+            </div>   
         </nav>
     );
 };

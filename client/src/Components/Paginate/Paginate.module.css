@@ -65,3 +65,20 @@
     border: none;
     border-radius: 25%;
 }
+
+.container_icon {
+    display: flex;
+    position: absolute;
+    left: 2%;
+    bottom: auto;
+}
+
+.icon {
+    padding: 0px 5px;
+    font-size: 25px;
+    color: black;
+}
+
+.icon:hover {
+    color: #25b687;
+}
