@@ -48,7 +48,8 @@ function Home() {
     const handlerFilterByDB = (e) => {
         e.preventDefault();
         dispatch(filterByDB(e.target.value));
-    }
+        setCurrentPage(1);
+    };
 
     return (
         <>
