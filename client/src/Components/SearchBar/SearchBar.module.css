@@ -46,14 +46,3 @@
     
 }
 
-@media screen and (min-width: 600px) {
-    .searchBar_container{
-        height: 30px;
-        width: 140%;
-    }
-
-    .searchBar{
-        width: 80%;
-    }
-    
-}
