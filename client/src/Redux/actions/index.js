@@ -1,11 +1,11 @@
 import axios from 'axios';
 import { GET_ALL_DOGS, GET_BREED, GET_FILTER_TEMPERAMENT, GET_TEMPERAMENTS, ORDER_BY_NAME, ORDER_BY_WEIGHT, SHOW_DOG_DETAILS, FILTER_BY_DB } from '../types';
-const myUrl = 'http://localhost:3001';
+//const myUrl = 'http://localhost:3001';
 
 
 export function getAllDogs() {
     return async function (dispatch) {
-        let info = await axios.get(`${myUrl}/dogs`);
+        let info = await axios.get(/*`${myUrl}/dogs`*/ '/dogs');
         return dispatch({
             type: GET_ALL_DOGS,
             payload: info.data,
@@ -15,7 +15,7 @@ export function getAllDogs() {
 
 export function getTemperaments() {
     return async function (dispatch) {
-        let info = await axios.get(`${myUrl}/temperament`);
+        let info = await axios.get(/*`${myUrl}/temperament`*/ '/temperament');
         return dispatch({
             type: GET_TEMPERAMENTS,
             payload: info.data,
@@ -33,7 +33,7 @@ export function FilterByTemperament(payload) {
 export function getBreed(payload) {
     return async function (dispatch) {
         try {
-            let info = await axios.get(`${myUrl}/dogs?name=${payload}`);
+            let info = await axios.get(/*`${myUrl}/dogs?name=${payload}`*/ `/dogs?name=${payload}`);
             return dispatch({
                 type: GET_BREED,
                 payload: info.data
@@ -68,7 +68,7 @@ export function filterByDB(payload) {
 export function showDogsDetails(id) {
     return async function(dispatch) {
         try {
-            var json = await axios.get(`${myUrl}/dogs/` + id);
+            var json = await axios.get(/*`${myUrl}/dogs/` + id*/ '/dogs/' + id);
             return dispatch({
                 type: SHOW_DOG_DETAILS,
                 payload: json.data
@@ -81,7 +81,7 @@ export function showDogsDetails(id) {
 
 export function postDog(payload) {
     return async function() {
-        const data = await axios.post(`${myUrl}/dog`, payload);
+        const data = await axios.post(/*`${myUrl}/dog`, payload*/ '/dog', payload);
         return data;
     };
 };

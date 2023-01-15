@@ -9,7 +9,8 @@ import store from './Redux/Store/index';
 import dotenv from 'dotenv';
 dotenv.config();
 
-axios.defaults.baseURL = process.env.React_APP_API || "http://localhost:3001";
+//axios.defaults.baseURL = process.env.React_APP_API || "http://localhost:3001";
+axios.defaults.baseURL = process.env.React_APP_API || "https://service-pi-dogs.onrender.com";
 
 ReactDOM.render(
   <Provider store={store}>
