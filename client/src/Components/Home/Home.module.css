@@ -116,7 +116,7 @@
     margin: 25px 0;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 400px) {
     .header {
         justify-content: space-evenly;
         padding-bottom: 5px;
