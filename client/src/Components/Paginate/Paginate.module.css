@@ -4,7 +4,6 @@
     justify-content: center;
     list-style-type: none;
     padding: 0;
-    margin: 0;
 }
 
 .list{
@@ -19,7 +18,7 @@
     color: #575025;
     float: left;
     padding: 8px 12px;
-    background-color: white;
+    background-color: #25b68700;
     text-decoration: none;
     border: none;
     cursor: pointer;
@@ -45,7 +44,7 @@
     color: #575025;
     float: left;
     padding: 12px 15px;
-    background-color: white;
+    background-color: #25b68700;
     text-decoration: none;
     border: none;
     cursor: pointer;

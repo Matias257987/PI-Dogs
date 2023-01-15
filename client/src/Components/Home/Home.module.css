@@ -116,46 +116,76 @@
     margin: 25px 0;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 320px) {
+    .header {
+        justify-content: space-evenly;
+        padding-bottom: 5px;
+        flex-wrap: wrap;
+    }
+
     .header_container {
         margin: 0;
     }
 
     #logo {
-        margin: 3px 0 2px 5px;
+        margin: 6px 0 0 2px;
+        float: none;
+        position: absolute;
+        height: 16%;
+        width: 25%;
     }
 
     .searchbar_container {
-        padding: 2px 65px;
+        padding: 0;
+        position: relative;
+        left: 15%;
     }    
 
     .filtered {
-        width: 135%;
+        width: 95%;
+        margin-top: 5px;
+    }
+
+    .filtered select:nth-child(3) {
+        border-top-left-radius: 12px;
+        border-bottom-left-radius: 12px;
+    }
+    
+    .filtered select:nth-child(2) {
+        border-top-right-radius: 12px;
+        border-bottom-right-radius: 12px;
     }
 
     .dogs {
-        margin: 2px 2%;
+        margin: 0;
     }
 
     #button_add {
-        width: 95%;
+        width: 135%;
         padding: 8px;
+        font-size: 10px;
+        margin: 5px 0 0 20px;
     }
 
     .main_container {
-        padding: 10px 2%;
+        padding: 0;
+        margin-top: 15px;
+        background-color: #25b68700;
     }
 
     .container_dogs {
-        display: flex;
-        flex-wrap: wrap;
-        justify-items: center;
-        justify-content: space-evenly;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 1.5% 1%;
     }
 
     #container_dog {
-        width: 30%;
-        margin: 8px;
+        height: 100%;
+        width: 70%;
+        margin: 10px;
+    }
+
+    .container_paginate {
+        margin: 40px 0;
     }
 }
 

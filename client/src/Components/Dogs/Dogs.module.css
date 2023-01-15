@@ -43,3 +43,21 @@ a {
     font-size: 12px;
     margin: 2px 0;
 }
+
+@media screen and (max-width: 320px) {
+    .main_container {
+        max-height: 70; 
+    }
+
+    .container {
+        height: 35vh;
+    }
+
+    .image {
+        height: 95%;
+    }
+
+    .temperaments {
+        height: 95px;
+    }
+}
