@@ -1,24 +1,35 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import axios from 'axios';
-import { Provider } from 'react-redux';
-import store from './Redux/Store/index';
-import dotenv from 'dotenv';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import axios from "axios";
+import { Provider } from "react-redux";
+import store from "./Redux/Store/index";
+import dotenv from "dotenv";
 dotenv.config();
+import { Auth0Provider } from "@auth0/auth0-react";
+
+const domain = process.env.REACT_APP_AUTH0_DOMAIN;
+const clientId = process.env.REACT_APP_AUTH0_CLIENT_ID;
 
 //axios.defaults.baseURL = process.env.React_APP_API || "http://localhost:3001";
-axios.defaults.baseURL = process.env.React_APP_API || "https://service-pi-dogs.onrender.com";
+axios.defaults.baseURL =
+  process.env.React_APP_API || "https://service-pi-dogs.onrender.com";
 
 ReactDOM.render(
   <Provider store={store}>
     <React.StrictMode>
-      <App />
+      <Auth0Provider
+        domain={domain}
+        clientId={clientId}
+        redirectUri={window.location.origin}
+      >
+        <App />
+      </Auth0Provider>
     </React.StrictMode>
   </Provider>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function
