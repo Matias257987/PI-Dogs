@@ -14,10 +14,8 @@ import Dogs from "../Dogs/Dogs";
 import Paginate from "../Paginate/Paginate";
 import SearchBar from "../SearchBar/SearchBar";
 import style from "./Home.module.css";
-import { useAuth0 } from "@auth0/auth0-react";
 
 function Home() {
-  const { loginWithPopup, isAuthenticated, user } = useAuth0();
   const dispatch = useDispatch();
   const allDogs = useSelector((state) => state.dogs);
   const allTemperaments = useSelector((state) => state.temperaments);
@@ -124,20 +122,6 @@ function Home() {
               </div>
             );
           })}
-        </div>
-        <div>
-          <button
-            className="navbar-btn__option"
-            onClick={() => loginWithPopup()}
-          >
-            <i class="fa-brands fa-google"></i>
-          </button>
-          {isAuthenticated && (
-            <div className="user">
-              <img className="user-img" src={user.picture} alt="Imagen-user" />
-              <h4 className="user-name">{user.nickname}</h4>
-            </div>
-          )}
         </div>
         <div className={`${style.container_paginate}`}>
           <Paginate
